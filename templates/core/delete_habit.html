@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    Add Habit
+    Delete Habit
 {% endblock %}
 
 {% block content %}
-    <h2>Add New Habit</h2>
+<h2>Are you sure you would like to remove this habit?</h2>
     <form method="POST">
         {% csrf_token %}
         {{ form.as_p }}
-        <button class='button is-primary' types='submit'>ADD</button>
+        <button class='button is-primary' type='submit'>Delete</button>
     </form>
     <footer>
         <button class='button is-primary'><a href="{% url 'home' %}">Home</a></button>

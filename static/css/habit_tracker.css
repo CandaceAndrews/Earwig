@@ -1,0 +1,18 @@
+body {
+    color: rgb(48, 32, 32);
+    background-color: rgb(139, 178, 167);
+}
+
+
+h1, h2 {
+    background-color: rgb(90, 131, 131);
+    color: rgb(209, 238, 228);
+    padding-left: 10px;
+}
+
+.button {
+    margin-left: 20px;
+    margin-top: 15px;
+    background-color: rgb(196, 222, 169);
+    border-radius: 5px;
+}

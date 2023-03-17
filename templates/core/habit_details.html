@@ -23,7 +23,8 @@
         {% endfor %}
     </table>
     <footer>
-        <button><a href="{% url 'add_record' habit.pk %}">Add New Record</a></button>
-        <button><a href="{% url 'home' %}">Home</a></button>
+        <button class='button is-primary'><a href="{% url 'add_record' habit.pk %}">Add New Record</a></button>
+        <button class='button is-primary'><a href="{% url 'delete_habit' habit.pk %}">Delete</a></button>
+        <button class='button is-primary'><a href="{% url 'home' %}">Home</a></button>
     </footer>
 {% endblock %}

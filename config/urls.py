@@ -25,4 +25,5 @@ urlpatterns = [
     path('habits/<int:pk>', views.view_habit_details, name='habit_details'),
     path('records/new/<int:habit_pk>', views.add_record, name='add_record'),
     path('__debug__/', include('debug_toolbar.urls')),
+    path('habit/<int:pk>/delete', views.delete_habit, name="delete_habit"),
 ]

@@ -41,3 +41,11 @@ def add_record(request, habit_pk):
             return redirect('home')
     form = RecordForm()
     return render(request, 'core/add_record.html', {'form': form, 'habit': habit})
+
+
+def delete_habit(request, pk):
+    habit_to_delete = get_object_or_404(Habit, pk=pk)
+    if request.method == 'POST':
+        habit_to_delete.delete()
+        return redirect('home')
+    return render(request, 'core/delete_habit.html')
