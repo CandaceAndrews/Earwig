@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+    <h2>My Habits:</h2>
+    <ul>
+        {% for habit in user.habits_i_created.all %}
+            <li><a href="{% url 'habit_details' habit.pk %}">{{ habit }}</a></li>
+        {% endfor %}
+    </ul>
+    <h2>Habits Observing:</h2>
+    <ul>
+        {% for habit in user.habits_i_am_observing.all %}
+            <li><a href="{% url 'habit_details' habit.pk %}">{{ habit }}</a></li>
+        {% endfor %}
+    </ul>
+    <button><a href="{% url 'add_habit' %}">Add New Habit</a></button>
+{% endblock %}

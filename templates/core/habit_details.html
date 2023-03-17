@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Habit Details{% endblock %}
+{% block content %}
+    <h1>Habit Details</h1>
+    <h3>{{ habit }}</h3>
+    <h3>Goal: {{ habit.goal }}</h3>
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>Number Completed</th>
+            <th>Goal Reached?</th>
+        </tr>
+        {% for record in habit.records.all %}
+        <tr>
+            <td>{{ record.date }}</td>
+            <td>{{ record.number_completed }}</td>
+            {% if record.number_completed >= record.habit.goal %}
+                <td>YES</td>
+            {% else %}
+                <td>NO</td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+    </table>
+    <footer>
+        <button><a href="{% url 'add_record' habit.pk %}">Add New Record</a></button>
+        <button><a href="{% url 'home' %}">Home</a></button>
+    </footer>
+{% endblock %}
